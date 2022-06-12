@@ -1,3 +1,12 @@
+
+
+const submitBtn = document.querySelector('#routeUpload')
+submitBtn.addEventListener('click', () => {
+    fetch('upload')
+    .then(res => {if (res.ok){return res.json()}})
+    .then(window.location.reload())
+})
+
 $(document).ready(function(){
     const urlParams = new URLSearchParams(window.location.search);
     const code = urlParams.get('code');
@@ -132,7 +141,9 @@ $(document).ready(function(){
         // maby check size or type here with upload.getSize() and upload.getType()
     
         // execute upload
-        upload.doUpload();
+        upload.doUpload();        
+        document.querySelector('#secondForm').classList.remove('hidden')
+        document.querySelector('#secondForm').classList.add('appear')
     });
 
     function getFilesMetadata(fileId){
@@ -143,6 +154,11 @@ $(document).ready(function(){
             },
             url:`https://www.googleapis.com/drive/v2/files/${fileId}`,
             success:function(data){
+                console.log(data.id)
+                const name = data.title
+                const link = `https://docs.google.com/uc?export=download&id=${data.id}`
+                document.querySelector('.invis').value = link
+                document.querySelector('#invisName').value = name
                 console.log("METADATA:", data);                
             },
             error: function(data) {
