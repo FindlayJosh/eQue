@@ -11,3 +11,10 @@ img{
 .invis, #invisName, #invisSelect{
   visibility: hidden;
 }
+
+.evaporate{
+  display: none;
+}
+.middle{
+  text-align: center;
+}

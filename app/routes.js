@@ -1,3 +1,4 @@
+const { find } = require("lodash");
 const { Db } = require("mongodb");
 
 module.exports = function (app, passport, db, ObjectId, path, util, uuidV4) {
@@ -35,7 +36,8 @@ module.exports = function (app, passport, db, ObjectId, path, util, uuidV4) {
   });
   // PROFILE SECTION =========================
   app.get('/profile', function (req, res) {
-    db.collection('songs').find().toArray((err, result) => {
+    const DbQuery = creator ?{userid:req.user} : {tags: 'heat'}
+    db.collection('songs').find(DbQuery).toArray((err, result) => {
       if (err) return console.log(err)
       res.render('profile.ejs', {
         user: req.user,
@@ -44,6 +46,23 @@ module.exports = function (app, passport, db, ObjectId, path, util, uuidV4) {
       })
     })
   });
+//display playlist
+// 1. fetch songs from mongo where mood appears in the tag values 
+// get 
+
+app.get('/playlist', function (req, res){
+  db.collection('songs').find({ tags: "heat" }).toArray((err, result) => {
+    if (err) return console.log(err)
+    res.render('profile.ejs', {
+      user: req.user,
+      playlist: result,
+      login: true
+    })
+  })
+});
+  
+
+
 
   // LOGOUT ==============================
   app.get('/logout', function (req, res) {
