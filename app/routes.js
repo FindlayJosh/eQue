@@ -35,11 +35,11 @@ module.exports = function (app, passport, db, ObjectId, path, util, uuidV4) {
   });
   // PROFILE SECTION =========================
   app.get('/profile', function (req, res) {
-    db.collection('messages').find().toArray((err, result) => {
+    db.collection('songs').find().toArray((err, result) => {
       if (err) return console.log(err)
       res.render('profile.ejs', {
         user: req.user,
-        messages: result,
+        songs: result,
         login: true
       })
     })
