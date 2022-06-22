@@ -63,6 +63,7 @@ module.exports = function(passport) {
                 newUser.local.password = newUser.generateHash(password); // use the generateHash function in our user model
                 newUser.local.creator = req.body.creator === 'true'
                 newUser.local.profilePic = 'https://s3.amazonaws.com/mypresonus/profile/1497352693_15435.jpg'
+                newUser.local.status = 'unassigned'
 console.log(req)
 				// save the user
                 newUser.save(function(err) {

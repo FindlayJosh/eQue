@@ -1,4 +1,3 @@
-const { find } = require("lodash");
 const { Db } = require("mongodb");
 
 module.exports = function (app, passport, db, ObjectId, path, util, uuidV4) {
@@ -6,21 +5,6 @@ module.exports = function (app, passport, db, ObjectId, path, util, uuidV4) {
   // normal routes ===============================================================
 
   // show the home page (will also have our login links)
-  app.get('/', function (req, res) {
-    console.log(req.isAuthenticated())
-    let login
-    if (req.isAuthenticated()) {
-      login = true
-    }
-    else {
-      login = false
-    }
-    res.render('index.ejs', {
-      login,
-      user: { local: { creator: false } }
-    });
-  });
-
   app.get('/home', function (req, res) {
     let login
     if (req.isAuthenticated()) {
@@ -29,51 +13,190 @@ module.exports = function (app, passport, db, ObjectId, path, util, uuidV4) {
     else {
       login = false
     }
+    db.collection('users').find().toArray((err, result) => {
+      if (err) return console.log(err)
+      db.collection('songs').find().toArray((err, songList) => {
+        if (err) return console.log(err)
     res.render('index.ejs', {
       login,
-      user: req.user
+      user: { local: { creator: true } },
+      artists: result,
+      songs: songList
     });
-  });
+  })
+  })
+});
+
+  // app.get('/home', function (req, res) {
+  //   let login
+  //   if (req.isAuthenticated()) {
+  //     login = true
+  //   }
+  //   else {
+  //     login = false
+  //   }
+  //   res.render('index.ejs', {
+  //     login,
+  //     user: req.user
+  //   });
+  // });
   // PROFILE SECTION =========================
-  app.get('/profile', function (req, res) {
-    const DbQuery = creator ?{userid:req.user} : {tags: 'heat'}
-    db.collection('songs').find(DbQuery).toArray((err, result) => {
+  
+  //  stuff w JT
+  // app.get('/profile', function (req, res) {
+  //   db.collection('songs').find(ObjectId(req.user._id)).toArray((err, results) => {
+  //     if (err) return console.log(err)
+  //     console.log(`ID=${req.user.songs[i]}`)
+  //   })
+  //   res.render('profile.ejs', {
+  //     user: req.user,
+  //     songs: results,
+  //     login: true
+  //   })
+  // });
+  app.get('/profile', function (req, res) 
+  //jt approach, pass user selected mood via query params and use MongoDB query to select songs whos tags match the mood query parameter//
+  // if no mood parameter is specified, display all songs//
+  {
+    db.collection('songs').find().toArray((err, result) => {
       if (err) return console.log(err)
+      if( req.user.local.creator){
       res.render('profile.ejs', {
+        artist: '',
+        user: req.user,
+        songs: result,
+        login: true
+      })
+    }
+      else{
+        res.render('profileJosh.ejs', {
+          artist: '',
+          user: req.user,
+          songs: result,
+          login: true
+        })
+      }
+    })
+  });
+// example of selecting songs that match a mood//
+  function filter(mood){
+    db.collection('songs').find({'tags': mood }).toArray((err,result)=>{
+    if (err) return console.log(err)
+    res.render('profile.ejs')
+    })
+  }
+//display playlist
+// 1. fetch songs from mongo where mood appears in the tag values 
+// get 
+app.get('/artist/:id', function(req, res) {
+  const userId = ObjectId(req.params.id)
+  db.collection('songs').find({user_id: ObjectId(userId)}).toArray((err, result) => {
+    if (err) return console.log(err)
+    console.log('line 94', req.user)
+    db.collection('users').find({_id: ObjectId(userId)}).toArray((err, userResult) => {
+      if (err) return console.log(err)  
+    res.render('profile.ejs', {
+      user: req.user,
+      songs: result,
+      artist: userResult[0]
+    })
+  })
+})
+});
+
+//
+// app.get('/playlist', function (req, res){
+//   db.collection('songs').find({ tags: "heat" }).toArray((err, result) => {
+//     if (err) return console.log(err)
+//     res.render('profile.ejs', {
+//       user: req.user,
+//       playlist: result,
+//       login: true
+//     })
+//   })
+
+// });
+  
+// Potentially differ between consumers or creators in terms of viewing music
+  // app.get('/profile', function (req, res) {
+  //   const DbQuery = creator ? {userid:req.user} : {tags: 'heat'}
+  //   db.collection('songs').find(DbQuery).toArray((err, result) => {
+  //     if (err) return console.log(err)
+  //     res.render('profile.ejs', {
+  //       user: req.user,
+  //       songs: result,
+  //       login: true
+  //     })
+  //   })
+  // });
+
+  app.get('/releases', function (req, res) {
+    db.collection('songs').find().toArray((err, result) => {
+      if (err) return console.log(err)
+      res.render('releases.ejs', {
         user: req.user,
         songs: result,
         login: true
       })
     })
   });
-//display playlist
-// 1. fetch songs from mongo where mood appears in the tag values 
-// get 
-
-app.get('/playlist', function (req, res){
-  db.collection('songs').find({ tags: "heat" }).toArray((err, result) => {
-    if (err) return console.log(err)
-    res.render('profile.ejs', {
-      user: req.user,
-      playlist: result,
-      login: true
+  app.get('/artists', function (req, res) {
+    db.collection('songs').find().toArray((err, result) => {
+      if (err) return console.log(err)
+      res.render('artists.ejs', {
+        user: req.user,
+        songs: result,
+        login: true
+      })
     })
-  })
-});
-  
-
-
-
+  });
+  app.get('/news', function (req, res) {
+    db.collection('songs').find().toArray((err, result) => {
+      if (err) return console.log(err)
+      res.render('news.ejs', {
+        user: req.user,
+        songs: result,
+        login: true
+      })
+    })
+  });
+  app.get('/podcasts', function (req, res) {
+    db.collection('songs').find().toArray((err, result) => {
+      if (err) return console.log(err)
+      res.render('podcasts.ejs', {
+        user: req.user,
+        songs: result,
+        login: true
+      })
+    })
+  });
   // LOGOUT ==============================
   app.get('/logout', function (req, res) {
     req.logout();
-    res.redirect('/');
+    res.redirect('/home');
   });
 
   // message board routes ===============================================================
 
-  app.post('/messages', (req, res) => {
-    db.collection('messages').insertOne({ name: req.body.name, msg: req.body.msg, thumbUp: 0, thumbDown: 0 }, (err, result) => {
+  app.post('/updateStatus', (req, res) => {
+    db.collection('users').findOneAndUpdate(
+      { 
+        _id: ObjectId(req.user._id)
+    }, {
+        $set: {
+          local: {
+            username : req.user.local.username,
+            email : req.user.local.email,
+            password : req.user.local.password,
+            creator : req.user.local.creator,
+            profilePic : req.user.local.profilePic,
+            status : req.body.mood
+          }
+        }
+    },{
+      upsert: false
+    },
+    (err, result) => {
       if (err) return console.log(err)
       console.log('saved to database')
       res.redirect('/profile')
@@ -83,13 +206,14 @@ app.get('/playlist', function (req, res){
 
 
   app.post('/songUpload', amILoggedIn, async (req,res) => {
-    console.log(req.body)
+    console.log( 'line 208', req.body)
     var songPath = uuidV4()
     try{
       const {albumArt} = req.files;
       const fileName = albumArt.name;
       const extension = path.extname(fileName);
       const URL = "/albumArt/" + songPath + extension;
+      console.log(req.body.tags)
 
       await util.promisify(albumArt.mv)('./public' + URL );
 
@@ -101,13 +225,14 @@ app.get('/playlist', function (req, res){
         })
         res.end()
       }
-        db.collection('songs').save(
+        db.collection('songs').insertOne(
           {
                 user_id: ObjectId(req.user._id),
                 songName: req.body.songName,
                 tags: req.body.tags.split(','),
                 img: "/albumArt/" + songPath + path.extname(req.files.albumArt.name),
-                downloadLink: req.body.downloadLink
+                downloadLink: req.body.downloadLink,
+                username: req.user.local.username
           }, {
           upsert: true,
         }, 
@@ -239,6 +364,6 @@ function amILoggedIn(req, res, next) {
   if (req.isAuthenticated())
       return next();
 
-  res.redirect('/');
+  res.redirect('/home');
 }
 

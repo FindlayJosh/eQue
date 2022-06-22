@@ -71,4 +71,4 @@ app.use(flash()); // use connect-flash for flash messages stored in session
 
 // launch ======================================================================
 app.listen(port);
-console.log(`http://localhost:${port}`)
+console.log(`http://localhost:${port}/home`)

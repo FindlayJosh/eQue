@@ -121,7 +121,6 @@ $(document).ready(function(){
             });
         }
     };
-    
     Upload.prototype.progressHandling = function (event) {
         var percent = 0;
         var position = event.loaded || event.position;
