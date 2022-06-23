@@ -22,7 +22,7 @@
 	<meta name="description" content="">
 	<meta name="keywords" content="">
 	<meta name="author" content="Dmitry Volkov">
-	<title>eQueue Emotionally Inteligent Playlist Curator</title>
+	<title>eQueue, for Creators, by Creators</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	<script src="/js/newMain.js"></script>
 
@@ -34,8 +34,8 @@
 	<header class="header">
 		<div class="header__content">
 			<div class="header__logo">
-				<a href="index.html">
-					<img src="/img/logo.svg" alt="">
+				<a href="/home">
+					<img src="/img/eQueue.png" alt="">
 				</a>
 			</div>
 
@@ -124,7 +124,7 @@
 	<div class="sidebar">
 		<!-- sidebar logo -->
 		<div class="sidebar__logo">
-			<img src="/img/logo.svg" alt="">
+			<img src="/img/eQueue.png" alt="">
 		</div>
 		<!-- end sidebar logo -->
 
@@ -220,19 +220,19 @@
 						</div>
 
 						<div class="hero__slide" data-bg="/img/home/musicGirlTwo.jpg">
-							<h2 class="hero__title">Metallica and Slipknot feature in trailer for ‘Long Live Rock’ documentary</h2>
-							<p class="hero__text">It also features Rage Against The Machine, Guns N' Roses and a number of others</p>
+							<h2 class="hero__title">Drum Leader Nick Continues!</h2>
+							<p class="hero__text">Nick Continues to show us the extent of his ability to be a percussionist! Check out his single "Drummer Boy"</p>
 							<div class="hero__btns">
-								<a href="#" class="hero__btn hero__btn--red">Learn more</a>
-								<a href="http://www.youtube.com/watch?v=0O2aH4XLbto" class="hero__btn hero__btn--video open-video"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16,10.27,11,7.38A2,2,0,0,0,8,9.11v5.78a2,2,0,0,0,1,1.73,2,2,0,0,0,2,0l5-2.89a2,2,0,0,0,0-3.46ZM15,12l-5,2.89V9.11L15,12ZM12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"/></svg> Watch video</a>
+								<!-- <a href="#" class="hero__btn hero__btn--red">Learn more</a>
+								<a href="http://www.youtube.com/watch?v=0O2aH4XLbto" class="hero__btn hero__btn--video open-video"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16,10.27,11,7.38A2,2,0,0,0,8,9.11v5.78a2,2,0,0,0,1,1.73,2,2,0,0,0,2,0l5-2.89a2,2,0,0,0,0-3.46ZM15,12l-5,2.89V9.11L15,12ZM12,2A10,10,0,1,0,22,12,10,10,0,0,0,12,2Zm0,18a8,8,0,1,1,8-8A8,8,0,0,1,12,20Z"/></svg> Watch video</a> -->
 							</div>
 						</div>
 
-						<div class="hero__slide" data-bg="/img/home/slide3.jpg">
+						<div class="hero__slide" data-bg="/img/home/violinPiano.jpg">
 							<h2 class="hero__title">New Artist of Our Label</h2>
-							<p class="hero__text">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable</p>
+							<p class="hero__text">Leo, Also known by aliases "Faye" or "Beifong" is one of our up and comming Musical Geniuses, check out his single "Hyperbolic" !</p>
 							<div class="hero__btns">
-								<a href="#" class="hero__btn">Learn more</a>
+								<!-- <a href="#" class="hero__btn"></a> -->
 							</div>
 						</div>
 					</div>
@@ -629,7 +629,7 @@
 								<li class="single-item">
 									<span class="single-item__number">1</span>
 									<span class="single-item__rate"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12.71,12.54a1,1,0,0,0-1.42,0l-3,3A1,1,0,0,0,9.71,17L12,14.66,14.29,17a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42Zm-3-1.08L12,9.16l2.29,2.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42l-3-3a1,1,0,0,0-1.42,0l-3,3a1,1,0,0,0,1.42,1.42Z"/></svg>1</span>
-									<a data-link data-title="Matte" data-artist="Josh" data-img="" href="<%=songs[0].downloadLink%>" class="single-item__cover">
+									<a data-link data-title="<%=songs[0].songName%>" data-artist="<%=songs[0].username%>" data-img="<%=songs[0].img%>" href="<%=songs[0].downloadLink%>" class="single-item__cover">
 										<img src="<%=songs[0].img%>" alt="">
 										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"/></svg>
 										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16,2a3,3,0,0,0-3,3V19a3,3,0,0,0,6,0V5A3,3,0,0,0,16,2Zm1,17a1,1,0,0,1-2,0V5a1,1,0,0,1,2,0ZM8,2A3,3,0,0,0,5,5V19a3,3,0,0,0,6,0V5A3,3,0,0,0,8,2ZM9,19a1,1,0,0,1-2,0V5A1,1,0,0,1,9,5Z"/></svg>
@@ -643,7 +643,7 @@
 							<li class="single-item">
 									<span class="single-item__number">2</span>
 									<span class="single-item__rate single-item__rate--red"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.29,11.46a1,1,0,0,0,1.42,0l3-3A1,1,0,1,0,14.29,7L12,9.34,9.71,7A1,1,0,1,0,8.29,8.46Zm3,1.08L12,14.84l-2.29-2.3A1,1,0,0,0,8.29,14l3,3a1,1,0,0,0,1.42,0l3-3a1,1,0,0,0-1.42-1.42Z"/></svg> 1</span>
-									<a data-link data-title="Adventure" data-artist="AudioPizza" data-img="/img/covers/cover2.jpg" href="<%=songs[4].downloadLink%>" class="single-item__cover">
+									<a data-link data-title="<%=songs[4].songName%>" data-artist="<%=songs[4].username%>" data-img="<%=songs[4].img%>" href="<%=songs[4].downloadLink%>" class="single-item__cover">
 										<img src="<%=songs[4].img%>" alt="">
 										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"/></svg>
 										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16,2a3,3,0,0,0-3,3V19a3,3,0,0,0,6,0V5A3,3,0,0,0,16,2Zm1,17a1,1,0,0,1-2,0V5a1,1,0,0,1,2,0ZM8,2A3,3,0,0,0,5,5V19a3,3,0,0,0,6,0V5A3,3,0,0,0,8,2ZM9,19a1,1,0,0,1-2,0V5A1,1,0,0,1,9,5Z"/></svg>
@@ -657,7 +657,7 @@
 							<li class="single-item">
 									<span class="single-item__number">3</span>
 									<span class="single-item__rate single-item__rate--red"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.29,11.46a1,1,0,0,0,1.42,0l3-3A1,1,0,1,0,14.29,7L12,9.34,9.71,7A1,1,0,1,0,8.29,8.46Zm3,1.08L12,14.84l-2.29-2.3A1,1,0,0,0,8.29,14l3,3a1,1,0,0,0,1.42,0l3-3a1,1,0,0,0-1.42-1.42Z"/></svg> 1</span>
-									<a data-link data-title="Adventure" data-artist="AudioPizza" data-img="/img/covers/cover2.jpg" href="<%=songs[15].downloadLink%>" class="single-item__cover">
+									<a data-link data-title="<%=songs[15].songName%>" data-artist="<%=songs[15].username%>" data-img="<%=songs[15].img%>" href="<%=songs[15].downloadLink%>" class="single-item__cover">
 										<img src="<%=songs[15].img%>" alt="">
 										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"/></svg>
 										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16,2a3,3,0,0,0-3,3V19a3,3,0,0,0,6,0V5A3,3,0,0,0,16,2Zm1,17a1,1,0,0,1-2,0V5a1,1,0,0,1,2,0ZM8,2A3,3,0,0,0,5,5V19a3,3,0,0,0,6,0V5A3,3,0,0,0,8,2ZM9,19a1,1,0,0,1-2,0V5A1,1,0,0,1,9,5Z"/></svg>
@@ -670,8 +670,8 @@
 								</li>
 							<li class="single-item">
 									<span class="single-item__number">4</span>
-									<span class="single-item__rate single-item__rate--red"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.29,11.46a1,1,0,0,0,1.42,0l3-3A1,1,0,1,0,14.29,7L12,9.34,9.71,7A1,1,0,1,0,8.29,8.46Zm3,1.08L12,14.84l-2.29-2.3A1,1,0,0,0,8.29,14l3,3a1,1,0,0,0,1.42,0l3-3a1,1,0,0,0-1.42-1.42Z"/></svg> 1</span>
-									<a data-link data-title="Adventure" data-artist="AudioPizza" data-img="/img/covers/cover2.jpg" href="<%=songs[22].downloadLink%>" class="single-item__cover">
+									<span class="single-item__rate single-item__rate--red"><svg xmlns="<%=songs[22].img%>" viewBox="0 0 24 24"><path d="M11.29,11.46a1,1,0,0,0,1.42,0l3-3A1,1,0,1,0,14.29,7L12,9.34,9.71,7A1,1,0,1,0,8.29,8.46Zm3,1.08L12,14.84l-2.29-2.3A1,1,0,0,0,8.29,14l3,3a1,1,0,0,0,1.42,0l3-3a1,1,0,0,0-1.42-1.42Z"/></svg> 1</span>
+									<a data-link data-title="<%=songs[22].songName%>" data-artist="<%=songs[22].username%>" data-img="<%=songs[22].img%>" href="<%=songs[22].downloadLink%>" class="single-item__cover">
 										<img src="<%=songs[22].img%>" alt="">
 										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"/></svg>
 										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16,2a3,3,0,0,0-3,3V19a3,3,0,0,0,6,0V5A3,3,0,0,0,16,2Zm1,17a1,1,0,0,1-2,0V5a1,1,0,0,1,2,0ZM8,2A3,3,0,0,0,5,5V19a3,3,0,0,0,6,0V5A3,3,0,0,0,8,2ZM9,19a1,1,0,0,1-2,0V5A1,1,0,0,1,9,5Z"/></svg>
@@ -685,7 +685,7 @@
 							<li class="single-item">
 									<span class="single-item__number">5</span>
 									<span class="single-item__rate single-item__rate--red"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M11.29,11.46a1,1,0,0,0,1.42,0l3-3A1,1,0,1,0,14.29,7L12,9.34,9.71,7A1,1,0,1,0,8.29,8.46Zm3,1.08L12,14.84l-2.29-2.3A1,1,0,0,0,8.29,14l3,3a1,1,0,0,0,1.42,0l3-3a1,1,0,0,0-1.42-1.42Z"/></svg> 1</span>
-									<a data-link data-title="Adventure" data-artist="AudioPizza" data-img="/img/covers/cover2.jpg" href="<%=songs[28].downloadLink%>" class="single-item__cover">
+									<a data-link data-title="<%=songs[28].songName%>" data-artist="<%=songs[28].username%>" data-img="<%=songs[28].img%>" href="<%=songs[28].downloadLink%>" class="single-item__cover">
 										<img src="<%=songs[28].img%>" alt="">
 										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"/></svg>
 										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16,2a3,3,0,0,0-3,3V19a3,3,0,0,0,6,0V5A3,3,0,0,0,16,2Zm1,17a1,1,0,0,1-2,0V5a1,1,0,0,1,2,0ZM8,2A3,3,0,0,0,5,5V19a3,3,0,0,0,6,0V5A3,3,0,0,0,8,2ZM9,19a1,1,0,0,1-2,0V5A1,1,0,0,1,9,5Z"/></svg>
@@ -716,7 +716,7 @@
 							<ul class="main__list">
 								<% for(let i=0; i<5; i++){ %>
 								<li class="single-item">
-									<a data-link data-title="Got What I Got" data-artist="Jason Aldean" data-img="/img/covers/cover.svg" href="<%= songs[i].downloadLink %>" class="single-item__cover">
+									<a data-link data-title="<%= songs[i].songName %>" data-artist="<%= songs[i].username %>" data-img="<%= songs[i].img %>" href="<%= songs[i].downloadLink %>" class="single-item__cover">
 										<img src="<%= songs[i].img %>" alt="">
 										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18.54,9,8.88,3.46a3.42,3.42,0,0,0-5.13,3V17.58A3.42,3.42,0,0,0,7.17,21a3.43,3.43,0,0,0,1.71-.46L18.54,15a3.42,3.42,0,0,0,0-5.92Zm-1,4.19L7.88,18.81a1.44,1.44,0,0,1-1.42,0,1.42,1.42,0,0,1-.71-1.23V6.42a1.42,1.42,0,0,1,.71-1.23A1.51,1.51,0,0,1,7.17,5a1.54,1.54,0,0,1,.71.19l9.66,5.58a1.42,1.42,0,0,1,0,2.46Z"/></svg>
 										<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16,2a3,3,0,0,0-3,3V19a3,3,0,0,0,6,0V5A3,3,0,0,0,16,2Zm1,17a1,1,0,0,1-2,0V5a1,1,0,0,1,2,0ZM8,2A3,3,0,0,0,5,5V19a3,3,0,0,0,6,0V5A3,3,0,0,0,8,2ZM9,19a1,1,0,0,1-2,0V5A1,1,0,0,1,9,5Z"/></svg>
@@ -1188,22 +1188,22 @@
 			<div class="row">
 				<div class="col-12 col-sm-8 col-md-6 col-lg-6 col-xl-4 order-4 order-md-1 order-lg-4 order-xl-1">
 					<div class="footer__logo">
-						<img src="/img/logo.svg" alt="">
+						<img src="/img/eQueue.png" alt="">
 					</div> 
-					<p class="footer__tagline">Record Label & Internet Radio,<br> Online music HTML Template.</p>
-					<div class="footer__links">
+					 <p class="footer__tagline">Emotionally Inteligent Playlist Curator.<br> For Creators, By Creators.</p>
+					<!-- <div class="footer__links">
 						<a href="mailto:support@blast.template"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M16.29,8.71a1,1,0,0,0,1.42,0l4-4a1,1,0,1,0-1.42-1.42L17,6.59l-1.29-1.3a1,1,0,0,0-1.42,1.42ZM21,8a1,1,0,0,0-1,1v9a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V8.41L9.88,14.3a3,3,0,0,0,2.11.87,3.08,3.08,0,0,0,2.16-.9l1.72-1.72a1,1,0,1,0-1.42-1.42L12.7,12.88a1,1,0,0,1-1.4,0L5.41,7H11a1,1,0,0,0,0-2H5A3,3,0,0,0,2,8V18a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V9A1,1,0,0,0,21,8Z"/></svg> support@blast.template</a>
 						<a href="tel:82345678900"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19.44,13c-.22,0-.45-.07-.67-.12a9.44,9.44,0,0,1-1.31-.39,2,2,0,0,0-2.48,1l-.22.45a12.18,12.18,0,0,1-2.66-2,12.18,12.18,0,0,1-2-2.66L10.52,9a2,2,0,0,0,1-2.48,10.33,10.33,0,0,1-.39-1.31c-.05-.22-.09-.45-.12-.68a3,3,0,0,0-3-2.49h-3a3,3,0,0,0-3,3.41A19,19,0,0,0,18.53,21.91l.38,0a3,3,0,0,0,2-.76,3,3,0,0,0,1-2.25v-3A3,3,0,0,0,19.44,13Zm.5,6a1,1,0,0,1-.34.75,1.05,1.05,0,0,1-.82.25A17,17,0,0,1,4.07,5.22a1.09,1.09,0,0,1,.25-.82,1,1,0,0,1,.75-.34h3a1,1,0,0,1,1,.79q.06.41.15.81a11.12,11.12,0,0,0,.46,1.55l-1.4.65a1,1,0,0,0-.49,1.33,14.49,14.49,0,0,0,7,7,1,1,0,0,0,.76,0,1,1,0,0,0,.57-.52l.62-1.4a13.69,13.69,0,0,0,1.58.46q.4.09.81.15a1,1,0,0,1,.79,1Z"/></svg> 8 234 567-89-00</a>
-					</div>	
+					</div>	 --> 
 				</div>
 
 				<div class="col-6 col-md-4 col-lg-3 col-xl-2 order-1 order-md-2 order-lg-1 order-xl-2 offset-md-2 offset-lg-0">
-					<h6 class="footer__title">The Blast</h6>
+					<h6 class="footer__title">eQueue</h6>
 					<div class="footer__nav">
-						<a href="about.html">About</a>
-						<a href="profile.html">My profile</a>
-						<a href="pricing.html">Pricing plans</a>
-						<a href="contacts.html">Contacts</a>
+						<a href="#">About</a>
+						<a href="#">My profile</a>
+						<a href="#">Pricing plans</a>
+						<a href="#">Contacts</a>
 					</div>
 				</div>
 
@@ -1216,16 +1216,16 @@
 						<div class="col-6">
 							<div class="footer__nav">
 								<a href=/artists>Artists</a>
-								<a href="releases.html">Releases</a>
-								<a href="events.html">Events</a>
-								<a href="podcasts.html">Podcasts</a>
+								<a href="#">Releases</a>
+								<a href="#">Events</a>
+								<a href="#">Podcasts</a>
 							</div>
 						</div>
 
 						<div class="col-6">
 							<div class="footer__nav">
-								<a href="news.html">News</a>
-								<a href="store.html">Store</a>
+								<a href="#">News</a>
+								<a href="#">Store</a>
 								<a href="#">Music</a>
 								<a href="#">Video</a>
 							</div>
@@ -1236,10 +1236,10 @@
 				<div class="col-6 col-md-4 col-lg-3 col-xl-2 order-2 order-lg-3 order-md-4 order-xl-4">
 					<h6 class="footer__title">Help</h6>
 					<div class="footer__nav">
-						<a href="privacy.html">Account & Billing</a>
-						<a href="privacy.html">Plans & Pricing</a>
-						<a href="privacy.html">Supported devices</a>
-						<a href="privacy.html">Accessibility</a>
+						<a href="#">Account & Billing</a>
+						<a href="#">Plans & Pricing</a>
+						<a href="#">Supported devices</a>
+						<a href="#">Accessibility</a>
 					</div>
 				</div>
 			</div>
@@ -1256,7 +1256,7 @@
 							<a href="#" target="_blank"><svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M14.9999 0C6.71586 0 0 6.71569 0 14.9997C0 23.2847 6.71586 30 14.9999 30C23.2843 30 30 23.2847 30 14.9997C30 6.71569 23.2843 0 14.9999 0" fill="#1ED760"/><path d="M21.5494 21.3091C21.2839 21.7445 20.717 21.8809 20.2832 21.6156C16.814 19.4952 12.4472 19.0164 7.30464 20.191C6.80908 20.3046 6.31511 19.9941 6.2022 19.4987C6.08859 19.0032 6.39803 18.5092 6.89464 18.3961C12.5224 17.1097 17.3497 17.6633 21.2438 20.0428C21.678 20.308 21.8147 20.8751 21.5494 21.3091" fill="white"/><path d="M23.3571 17.2862C23.023 17.8283 22.3141 17.9984 21.7727 17.6655C17.8025 15.2251 11.7482 14.518 7.05106 15.9438C6.44207 16.1278 5.79867 15.7845 5.6136 15.1764C5.43013 14.5674 5.77361 13.9252 6.38173 13.74C11.7475 12.1117 18.4181 12.9003 22.9781 15.7027C23.5196 16.0361 23.69 16.7453 23.3571 17.2862" fill="white"/><path d="M23.5131 13.0974C18.7508 10.2692 10.8956 10.0092 6.34947 11.389C5.61927 11.6105 4.84726 11.1984 4.62621 10.4684C4.40498 9.73787 4.81656 8.96639 5.54711 8.74445C10.7659 7.16039 19.4411 7.4663 24.9235 10.7207C25.5803 11.1106 25.7956 11.9586 25.4064 12.6142C25.0169 13.2708 24.1681 13.4873 23.5131 13.0974" fill="white"/></svg></a>
 							<a href="#" target="_blank"><svg width="30" height="30" viewBox="0 0 30 30" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M0 15C0 6.71573 6.71573 0 15 0C23.2843 0 30 6.71573 30 15C30 23.2843 23.2843 30 15 30C6.71573 30 0 23.2843 0 15Z" fill="#FF0000"/><path d="M22.6656 11.2958C22.4816 10.5889 21.9395 10.0322 21.251 9.84333C20.0034 9.5 15 9.5 15 9.5C15 9.5 9.99664 9.5 8.74891 9.84333C8.06045 10.0322 7.51827 10.5889 7.33427 11.2958C7 12.5769 7 15.25 7 15.25C7 15.25 7 17.923 7.33427 19.2042C7.51827 19.9111 8.06045 20.4678 8.74891 20.6568C9.99664 21 15 21 15 21C15 21 20.0034 21 21.251 20.6568C21.9395 20.4678 22.4816 19.9111 22.6656 19.2042C23 17.923 23 15.25 23 15.25C23 15.25 23 12.5769 22.6656 11.2958" fill="white"/><path d="M13.5 18V13L17.5 15.5001L13.5 18Z" fill="#FF0000"/></svg></a>
 						</div>
-						<small class="footer__copyright">© Blast, 2017—2021. Created by <a href="https://themeforest.net/user/dmitryvolkov/portfolio" target="_blank">Dmitry Volkov</a>.</small>
+						<small class="footer__copyright">© eQueue, 2022. Created by <a href="https://themeforest.net/user/dmitryvolkov/portfolio" target="_blank">Joshua Findlay</a>.</small>
 					</div>
 				</div>
 			</div>
@@ -1317,9 +1317,7 @@
 	<div id="modal-info3" class="zoom-anim-dialog mfp-hide modal modal--info">
 		<span class="modal__icon modal__icon--red">
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M15.71,8.29a1,1,0,0,0-1.42,0L12,10.59,9.71,8.29A1,1,0,0,0,8.29,9.71L10.59,12l-2.3,2.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0L12,13.41l2.29,2.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42L13.41,12l2.3-2.29A1,1,0,0,0,15.71,8.29Zm3.36-3.36A10,10,0,1,0,4.93,19.07,10,10,0,1,0,19.07,4.93ZM17.66,17.66A8,8,0,1,1,20,12,7.95,7.95,0,0,1,17.66,17.66Z"></path></svg>
-		</span>
-		
-		<button class="modal__close" type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.41,12l4.3-4.29a1,1,0,1,0-1.42-1.42L12,10.59,7.71,6.29A1,1,0,0,0,6.29,7.71L10.59,12l-4.3,4.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0L12,13.41l4.29,4.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42Z"/></svg></button>
+		</span>#n class="modal__close" type="button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13.41,12l4.3-4.29a1,1,0,1,0-1.42-1.42L12,10.59,7.71,6.29A1,1,0,0,0,6.29,7.71L10.59,12l-4.3,4.29a1,1,0,0,0,0,1.42,1,1,0,0,0,1.42,0L12,13.41l4.29,4.3a1,1,0,0,0,1.42,0,1,1,0,0,0,0-1.42Z"/></svg></button>
 
 		<h4 class="sign__title">Payment #50 failed!</h4>
 
