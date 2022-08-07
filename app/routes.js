@@ -5,7 +5,7 @@ module.exports = function (app, passport, db, ObjectId, path, util, uuidV4) {
   // normal routes ===============================================================
 
   // show the home page (will also have our login links)
-  app.get('/home', function (req, res) {
+  app.get('/', function (req, res) {
     let login
     if (req.isAuthenticated()) {
       login = true
@@ -92,7 +92,6 @@ app.get('/artist/:id', function(req, res) {
   const userId = ObjectId(req.params.id)
   db.collection('songs').find({user_id: ObjectId(userId)}).toArray((err, result) => {
     if (err) return console.log(err)
-    console.log('line 94', req.user)
     db.collection('users').find({_id: ObjectId(userId)}).toArray((err, userResult) => {
       if (err) return console.log(err)  
     res.render('profile.ejs', {
@@ -173,7 +172,7 @@ app.get('/artist/:id', function(req, res) {
   // LOGOUT ==============================
   app.get('/logout', function (req, res) {
     req.logout();
-    res.redirect('/home');
+    res.redirect('/');
   });
 
   // message board routes ===============================================================
@@ -203,10 +202,7 @@ app.get('/artist/:id', function(req, res) {
     })
   })
 
-
-
   app.post('/songUpload', amILoggedIn, async (req,res) => {
-    console.log( 'line 208', req.body)
     var songPath = uuidV4()
     try{
       const {albumArt} = req.files;
@@ -217,7 +213,7 @@ app.get('/artist/:id', function(req, res) {
 
       await util.promisify(albumArt.mv)('./public' + URL );
 
-      res.redirect('/home')
+      res.redirect('/')
       } catch(err){
         console.log(err);
         res.status(500).json({
@@ -316,7 +312,7 @@ app.get('/artist/:id', function(req, res) {
 
   // process the login form
   app.post('/login', passport.authenticate('local-login', {
-    successRedirect: '/home', // redirect to the secure profile section
+    successRedirect: '/', // redirect to the secure profile section
     failureRedirect: '/login', // redirect back to the signup page if there is an error
     failureFlash: true // allow flash messages
   }));
@@ -329,7 +325,7 @@ app.get('/artist/:id', function(req, res) {
 
   // process the signup form
   app.post('/signup', passport.authenticate('local-signup', {
-    successRedirect: '/home', // redirect to the secure profile section
+    successRedirect: '/', // redirect to the secure profile section
     failureRedirect: '/signup', // redirect back to the signup page if there is an error
     failureFlash: true // allow flash messages
   }));
@@ -364,6 +360,6 @@ function amILoggedIn(req, res, next) {
   if (req.isAuthenticated())
       return next();
 
-  res.redirect('/home');
+  res.redirect('/');
 }
 
