@@ -7,7 +7,7 @@ $(document).ready(function(){
 
     // redirect_uri of the project
 
-    var redirect_uri = "https://equeue-by-joshua-findlay.herokuapp.com/";
+    var redirect_uri = "http://localhost:8080/profile";
 
     // scope of the project
 
