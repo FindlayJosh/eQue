@@ -15,7 +15,7 @@ $(document).ready(function(){
 
     // the url to which the user is redirected to
 
-    var url = "localhost:8080/profile";
+    var url = "localhost:8080/profile/profile";
 
 
     // this is event click listener for the button
