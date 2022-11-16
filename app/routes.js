@@ -113,9 +113,7 @@ app.get('/artist/:id', function(req, res) {
 //       login: true
 //     })
 //   })
-
 // });
-  
 // Potentially differ between consumers or creators in terms of viewing music
   // app.get('/profile', function (req, res) {
   //   const DbQuery = creator ? {userid:req.user} : {tags: 'heat'}
